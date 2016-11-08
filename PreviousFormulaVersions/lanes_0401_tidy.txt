@@ -1,0 +1,1586 @@
+----------------------------------------------------------------------------------------------------
+----- SoldTo
+----------------------------------------------------------------------------------------------------
+3574184-QUBICAAMFB.V.-NCP/MOD
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ShipTo
+----------------------------------------------------------------------------------------------------
+3574184-QUBICAAMFB.V.-NCP/MOD
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MakeFor
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- CustomerType
+----------------------------------------------------------------------------------------------------
+AFF-Affiliate
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SalesArea
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SalesRegion
+----------------------------------------------------------------------------------------------------
+EME-Europe
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SalesGrouping
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BowlingCenterChain
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Country
+----------------------------------------------------------------------------------------------------
+NL-Netherlands
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- State
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SalesRep
+----------------------------------------------------------------------------------------------------
+284476-Salesperson-Unspecified
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BranchPlant
+----------------------------------------------------------------------------------------------------
+7110
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderType
+----------------------------------------------------------------------------------------------------
+S3
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderNumber
+----------------------------------------------------------------------------------------------------
+663976
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- LineNumber
+----------------------------------------------------------------------------------------------------
+1.014
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderDate
+----------------------------------------------------------------------------------------------------
+40423
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- RequestedDate
+----------------------------------------------------------------------------------------------------
+40449
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ItemNumber
+----------------------------------------------------------------------------------------------------
+Q941760BL
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- LineType
+----------------------------------------------------------------------------------------------------
+ZS
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Description
+----------------------------------------------------------------------------------------------------
+HWY66BlackLanePackage
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- DocumentNumber
+----------------------------------------------------------------------------------------------------
+1691839
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- InvoiceDate
+----------------------------------------------------------------------------------------------------
+40492
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ItemPriceGroups
+----------------------------------------------------------------------------------------------------
+PEDTHUND
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ProductLine
+----------------------------------------------------------------------------------------------------
+700
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Product
+----------------------------------------------------------------------------------------------------
+199
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Sub-Product
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ListPrice
+----------------------------------------------------------------------------------------------------
+0
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- PricePerUnit
+----------------------------------------------------------------------------------------------------
+0
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Currency
+----------------------------------------------------------------------------------------------------
+USD
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ActualShipDate
+----------------------------------------------------------------------------------------------------
+40492
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- QtyOrderTransact
+----------------------------------------------------------------------------------------------------
+1
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ExtendedAmount
+----------------------------------------------------------------------------------------------------
+0
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- PartNumOK
+----------------------------------------------------------------------------------------------------
+IF(
+	IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Part '#]],1,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Description]],1,FALSE)
+			,"N/A"
+		)
+	)="N/A"
+	,"N/A"
+	,"OK"
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MainOrder
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]="15730391"
+		,AND(
+			LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],10)="DIV - QAMF"
+			,NOT(
+				OR(
+					LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],6)="219246"
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],6)="249946"
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],6)="316977"
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],7)="3925218"
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],7)="4264819"
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],5)="8400 "
+				)
+			)
+		)
+	)
+	,"Exclude"
+	,IF(
+		OR(
+			'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MakeFor]=""
+			,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MakeFor]="0"
+		)
+		,"O"&'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]
+		,"P"&'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MakeFor]
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsScoring
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],3,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],2,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsHW66
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[IsAMU]],100,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[IsAMU]],99,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"
+		,"_"
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],4,FALSE)
+			,VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],3,FALSE)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsOrdWUpg
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScoring]=0
+	,0
+	,SUMIFS('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[IsUPG],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[MainOrder],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsAMFScTrdIn
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"_"
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is AMF trade-in]],93,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is AMF trade-in]],92,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsOrdWAMFScTrdIn
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScoring]=0
+		,0
+		,SUMIFS('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[IsAMFScTrdIn],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[MainOrder],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder])
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsCProUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is UPG lic.]],51,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is UPG lic.]],50,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsSuiteSpot
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],95,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],94,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsTenpinTour
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],96,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],95,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsBESXDualMode
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],97,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],96,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsTenpinTourUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],98,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],97,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsBESXDualModeUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],99,FALSE)
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],98,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MainPrLine
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"_"
+	,IF(
+		NUMBERVALUE('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ProductLine])=700
+		,"AMU"
+		,"STS"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MainProductFamily
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"
+	)
+	,"_"
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsHW66]>0
+		,"Highway 66"
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],45,FALSE)
+			,VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],44,FALSE)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ProductFamily
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"
+	)
+	,"_"
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsHW66]>0
+		,"Highway 66"
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],44,FALSE)
+			,VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],43,FALSE)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- UniqueOrder
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		MATCH('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],0)<ROW('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder])-2
+		,0
+		,1
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderY
+----------------------------------------------------------------------------------------------------
+YEAR('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderDate])
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderM
+----------------------------------------------------------------------------------------------------
+MONTH('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderDate])
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- InvoicedY
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate]=""
+	,""
+	,YEAR('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- InvoicedM
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate]=""
+	,""
+	,MONTH('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YearOfRef
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+	,IF(
+		OR(
+			'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=$BR$1
+			,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]=CurY
+		)
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]+1
+	)
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Test
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+	,""
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- PrjType
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"_"
+	,IF(
+		IFERROR(
+			OR(
+				'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderType]="S0"
+				,NUMBERVALUE('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811206
+				,NUMBERVALUE('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber])=15810892
+				,NUMBERVALUE('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811372
+			)
+			,FALSE
+		)
+		,"RENT"
+		,IF(
+			SUMIF('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsHW66]:[IsHW66]])>0
+			,IF(
+				SUMIF('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0
+				,"HW66-BES X"
+				,"HW66"
+			)
+			,IF(
+				'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsOrdWUpg]>0
+				,IF(
+					'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsOrdWAMFScTrdIn]>0
+					,"MOD AMF"
+					,"UPG"
+				)
+				,IF(
+					SUMIF('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0
+					,IF(
+						'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS"
+						,IF(
+							MID('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderType],2,1)="3"
+							,"MOD"
+							,"NCP"
+						)
+						,"HW66-BES X"
+					)
+					,IF(
+						SUMIF('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsCProUPG]:[IsCProUPG]])>0
+						,"CProUPG"
+						,IF(
+							'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS"
+							,"MOD"
+							,"HW66"
+						)
+					)
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Reg2
+----------------------------------------------------------------------------------------------------
+IF(
+	LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SalesRegion],4)="BCO "
+	,"Bowlmor AMF"
+	,IF(
+		OR(
+			'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]=""
+			,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]="US - United States"
+			,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SalesRegion],1)="0"
+		)
+		,"US"
+		,IF(
+			OR(
+				LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2)="FR"
+				,TRIM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SalesRegion])=""
+				,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SalesRegion],3)="EME"
+				,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SalesRegion],3)="AFR"
+			)
+			,"EMEA"
+			,IF(
+				LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2)="AU"
+				,"AUS - Australia"
+				,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SalesRegion]
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MacroReg
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]=""
+	,"AMER"
+	,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],10,FALSE)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SubReg
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]=""
+	,"US"
+	,IF(
+		LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+		,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE)
+		,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- USSubRegNoMIL
+----------------------------------------------------------------------------------------------------
+IFERROR(
+	IF(
+		LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="BCA"
+		,"BAMF"
+		,IF(
+			OR(
+				LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MFO"
+				,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MUS"
+			)
+			,IF(
+				LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AE"
+				,"MIL-EU"
+				,IF(
+					LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AP"
+					,"MIL-PAC"
+					,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE)
+				)
+			)
+			,IF(
+				IFERROR(
+					SEARCH("MAIN EVENT",'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ShipTo])
+					,0
+				)>0
+				,"ME"
+				,IF(
+					IFERROR(
+						SEARCH("BOWL NEW ENGLAND",'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo])
+						,0
+					)>0
+					,"BNE"
+					,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE)
+				)
+			)
+		)
+	)
+	,""
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- USSubReg
+----------------------------------------------------------------------------------------------------
+IFERROR(
+	IF(
+		LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="BCA"
+		,"BAMF"
+		,IF(
+			OR(
+				LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MFO"
+				,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MUS"
+			)
+			,IF(
+				LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AE"
+				,"MIL-EU"
+				,IF(
+					LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AP"
+					,"MIL-PAC"
+					,"MIL"
+				)
+			)
+			,IF(
+				IFERROR(
+					SEARCH("MAIN EVENT",'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ShipTo])
+					,0
+				)>0
+				,"ME"
+				,IF(
+					IFERROR(
+						SEARCH("BOWL NEW ENGLAND",'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo])
+						,0
+					)>0
+					,"BNE"
+					,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE)
+				)
+			)
+		)
+	)
+	,""
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SubReg1
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@USSubReg]=""
+		,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@USSubReg],2)="NA"
+	)
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg]
+	,"US-"&'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@USSubReg]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- DistrPartner
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="RENT"
+	,"Direct"
+	,IF(
+		LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1],2)="US"
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1]
+		,IF(
+			LEFT(VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),5)="QAMF "
+			,IF(
+				OR(
+					LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="D10 - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DIS - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "
+				)
+				,"Other distr."
+				,IF(
+					AND(
+						NOT(
+							OR(
+								LEFT(VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF Fr"
+								,LEFT(VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF UK"
+							)
+						)
+						,NOT(
+							LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "
+						)
+					)
+					,"Direct"
+					,IF(
+						LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+						,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+						,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+					)
+				)
+			)
+			,IF(
+				OR(
+					'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType]=""
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BCI - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="TRD - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BOW - "
+				)
+				,"Direct"
+				,IF(
+					LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+					,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+					,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MajorDistPartner
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="RENT"
+	,"Direct"
+	,IF(
+		LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1],2)="US"
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1]
+		,IF(
+			LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@DistrPartner],5)="QAMF "
+			,IF(
+				OR(
+					LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="D10 - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DIS - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "
+				)
+				,"Other distr."
+				,IF(
+					AND(
+						NOT(
+							OR(
+								LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF Fr"
+								,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF UK"
+							)
+						)
+						,NOT(
+							LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "
+						)
+					)
+					,"Direct"
+					,IF(
+						LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+						,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+						,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+					)
+				)
+			)
+			,IF(
+				OR(
+					'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType]=""
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BCI - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="TRD - "
+					,LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BOW - "
+				)
+				,"Direct"
+				,IF(
+					LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+					,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+					,VLOOKUP(LEFT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SubReg2
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MajorDistPartner]="Direct"
+	,"Direct"
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsScPlusIsHW
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScoring]+'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsHW66]+SUM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YSH
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		AND(
+			'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="CProUPG"
+			,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@UniqueOrder]=0
+		)
+		,AND(
+			NOT(
+				'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="CProUPG"
+			)
+			,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+SUM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+		)
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]>CurM
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+	)
+	,""
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YBL
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsCProUPG]+SUM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+	,""
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+		,IF(
+			OR(
+				CurM>='Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]
+				,CurY>'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]
+			)
+			,CurY
+			,""
+		)
+		,IF(
+			CurM>='Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]
+			,IF(
+				CurM<'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]
+				,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+				,IF(
+					'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+					,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+					,""
+				)
+			)
+			,IF(
+				'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+				,IF(
+					CurM<'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]
+					,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+					,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+				)
+				,IF(
+					'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]='Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+					,IF(
+						CurM<'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]
+						,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+						,""
+					)
+					,""
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YBL1
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsCProUPG]+SUM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]=""
+	)
+	,""
+	,IF(
+		OR(
+			AND(
+				'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]='Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-1
+				,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=CurM
+			)
+			,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-1
+		)
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-1
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YBL2
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsCProUPG]+SUM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]=""
+	)
+	,""
+	,IF(
+		OR(
+			AND(
+				'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]='Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-2
+				,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=CurM
+			)
+			,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-2
+		)
+		,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-2
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ORDER
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0
+	,""
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SH
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YSH]=""
+	,""
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]=""
+	,""
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL1
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL1]=""
+	,""
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL2
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL2]=""
+	,""
+	,'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- TotBL
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@BL]=""
+	,""
+	,SUM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[BL]:[BL2]])/COUNT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[BL]:[BL2]])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderDateCheck
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<$BS$1
+	,"Y"
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=$BR$1
+		,"Y"
+		,"N"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ShippedDateCheck
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]<$BS$1
+	,"Y"
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]<=$BR$1
+		,"Y"
+		,"N"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- QtyIncl
+----------------------------------------------------------------------------------------------------
+IF(
+	COUNT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])=0
+	,""
+	,SUM('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])/COUNT('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsHWY66 Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[#Data],2,FALSE)
+			,"N"
+		)="N"
+		,"N"
+		,"Y"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderNum-HWY66Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsHWY66 Theme]]="N"
+		,""
+		,IFERROR(
+			'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]&"-"&VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[#Data],3,FALSE)
+			,"No Theme"
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderHWY66 Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ProductFamily]="Highway 66"
+		,IFERROR(
+			VLOOKUP('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]&"-*",'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[OrderNum-HWY66Theme]:[OrderNum-HWY66Theme]],1,FALSE)
+			,""
+		)
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- HWY66Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ProductFamily]="Highway 66"
+		,IF(
+			'Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]]=""
+			,"No theme"
+			,IF(
+				MID('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]],LEN('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]])-1,1)="-"
+				,VLOOKUP(MID('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]],LEN('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]]),1),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[[ID]:[ID2]],2,FALSE)
+				,VLOOKUP(MID('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]],LEN('Q:\scambio\Mirko\Scoring Lanes Sales Global (April 1st, 2016) - v4c - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]])-1,2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[[ID]:[ID2]],2,FALSE)
+			)
+		)
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL1
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL1]=""
+	)
+	,""
+	,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL2
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL2]=""
+	)
+	,""
+	,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- TotBL
+----------------------------------------------------------------------------------------------------
+IFERROR(
+	SUM('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[BL]:[BL2]])/COUNT('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[BL]:[BL2]])
+	,""
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SH-BL
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SH]=""
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]=""
+		,0
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]
+	)
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]=""
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SH]
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL-CY
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]=""
+	,""
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate]=""
+		,IF(
+			$DC$1="Y"
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]
+			,""
+		)
+		,IF(
+			YEAR('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])>$DB$1
+			,""
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL-NY
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]=""
+	,""
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[BL-CY]]=""
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YBL-BDG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]=""
+	,""
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate]=""
+		,IF(
+			$DC$1="Y"
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]
+			,""
+		)
+		,IF(
+			YEAR('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])<$DB$1
+			,$DB$1
+			,YEAR('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Y-Promised
+----------------------------------------------------------------------------------------------------
+YEAR('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BudgetClm
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]=""
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]=""
+		,""
+		,IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate]=""
+			,IF(
+				$DC$1="Y"
+				,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]
+				,""
+			)
+			,IF(
+				OR(
+					YEAR('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])='Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]
+					,YEAR('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])<$DB$1
+				)
+				,"BL-CY"
+				,"BL-NY"
+			)
+		)
+	)
+	,"SH"
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MacroArea4
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country]=""
+	,"North America"
+	,IF(
+		LEFT('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+		,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],12,FALSE)
+		,VLOOKUP(LEFT('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],12,FALSE)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderDateCheck
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"N"
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]<$DB$1
+		,"Y"
+		,IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderM]<=$DA$1
+			,"Y"
+			,"N"
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ShippedMonthCheck
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"N"
+	,IF(
+		OR(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]=""
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]>$DA$1
+		)
+		,"N"
+		,"Y"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ShippedDateCheck
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"N"
+	,IF(
+		'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1
+		,"Y"
+		,IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]<=$DA$1
+			,"Y"
+			,"N"
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- QtyIncl
+----------------------------------------------------------------------------------------------------
+SUM('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- RevUSD
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		AND(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]=""
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[YBL-BDG]]=""
+		)
+		,""
+		,IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="USD"
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]
+			,IF(
+				OR(
+					'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+					,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[InvoicedM]>$DA$1
+				)
+				,IF(
+					'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR"
+					,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,8+$DA$1),2)
+					,IF(
+						'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP"
+						,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,8+$DA$1),2)
+						,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,8+$DA$1),2)
+					)
+				)
+				,IF(
+					'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR"
+					,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF(
+								'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1
+								,5
+								,5+'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1
+							))),2)
+					,IF(
+						'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP"
+						,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF(
+									'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1
+									,5
+									,5+'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1
+								))),2)
+						,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF(
+									'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1
+									,5
+									,5+'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1
+								))),2)
+					)
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- LookupListPrice
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"0"
+	,IFERROR(
+		1*IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ProductLine]="700"
+			,IF(
+				'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR"
+				,IFERROR(
+					VLOOKUP('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!HW66ListPr[[PartNum]:[USD Price]],4,FALSE)
+					,0
+				)
+				,IFERROR(
+					VLOOKUP('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!HW66ListPr[[PartNum]:[USD Price]],5,FALSE)
+					,0
+				)
+			)
+			,IF(
+				'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR"
+				,IFERROR(
+					VLOOKUP('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!STSListPr[[PartNum]:[USD Price]],4,FALSE)
+					,0
+				)
+				,IFERROR(
+					VLOOKUP('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!STSListPr[[PartNum]:[USD Price]],5,FALSE)
+					,0
+				)
+			)
+		)
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD]
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- LineTotalListPrice
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"0"
+	,IF(
+		AND(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]=""
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[YBL-BDG]]=""
+		)
+		,""
+		,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ListPrice]=0
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LookupListPrice]
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ListPrice]
+		)*(IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD]<0
+			,-1
+			,1
+		))
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ListUSD
+----------------------------------------------------------------------------------------------------
+IF(
+	'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		AND(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]=""
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[YBL-BDG]]=""
+		)
+		,""
+		,(IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]=0
+			,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD]
+			,IF(
+				'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="USD"
+				,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]
+				,IF(
+					OR(
+						'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+						,'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[InvoicedM]>$DA$1
+					)
+					,IF(
+						'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR"
+						,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,8+$DA$1),2)
+						,IF(
+							'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP"
+							,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,8+$DA$1),2)
+							,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,8+$DA$1),2)
+						)
+					)
+					,IF(
+						'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR"
+						,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF(
+									'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1
+									,5
+									,5+'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1
+								))),2)
+						,IF(
+							'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP"
+							,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF(
+										'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1
+										,5
+										,5+'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1
+									))),2)
+							,ROUND('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,('Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF(
+										'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1
+										,5
+										,5+'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1
+									))),2)
+						)
+					)
+				)
+			)
+		))*(IF(
+			'Q:\scambio\Mirko\STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD]<0
+			,-1
+			,1
+		))
+	)
+)
+----------------------------------------------------------------------------------------------------
+

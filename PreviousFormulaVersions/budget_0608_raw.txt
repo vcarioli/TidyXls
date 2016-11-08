@@ -1,0 +1,469 @@
+>>>	SoldTo
+218857 - MERIDYEN SPOR DIS TIC.VE PAZ. LTD. STI
+<<<
+>>>	ShipTo
+218857 - MERIDYEN SPOR DIS TIC.VE PAZ. LTD. STI
+<<<
+>>>	Country
+TR - Turkey
+<<<
+>>>	State
+
+<<<
+>>>	CustomerType
+DIS - Distributor - International
+<<<
+>>>	SalesArea
+MIE - Middle East
+<<<
+>>>	SalesRegion
+
+<<<
+>>>	SalesGrouping
+
+<<<
+>>>	Chain
+
+<<<
+>>>	SalesRep
+284476 - Salesperson - Unspecified
+<<<
+>>>	MakeFor
+
+<<<
+>>>	BranchPlant
+7120
+<<<
+>>>	OrderType
+S3
+<<<
+>>>	OrderNumber
+15714056
+<<<
+>>>	LineNumber
+2
+<<<
+>>>	OrderDate
+42208
+<<<
+>>>	PromisedDate
+42278
+<<<
+>>>	ItemNumber
+612060202
+<<<
+>>>	LineType
+WM
+<<<
+>>>	Description
+HWY66 2 Lanes Auto Bumper
+<<<
+>>>	DocumentNumber
+1982296
+<<<
+>>>	InvoiceDate
+42236
+<<<
+>>>	ItemPriceGroups
+PEDTHUND
+<<<
+>>>	ProductLine
+700
+<<<
+>>>	Product
+401
+<<<
+>>>	Sub-Product
+
+<<<
+>>>	ListPrice
+1650
+<<<
+>>>	PricePerUnit
+39000
+<<<
+>>>	Currency
+USD
+<<<
+>>>	ActualShipDate
+
+<<<
+>>>	QtyOrderTransact
+1
+<<<
+>>>	ExtendedAmount
+39000
+<<<
+>>>	PartNumOK
+=IF(IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Part '#]],1,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Description]],1,FALSE),"N/A"))="N/A","N/A","OK")
+<<<
+>>>	MainOrder
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber]="15730391",AND(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],10)="DIV - QAMF",NOT(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],6)="219246",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],6)="249946",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],6)="316977",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],7)="3925218",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],7)="4264819",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],5)="8400 ")))),"Exclude",
+IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MakeFor]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MakeFor]="0",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MakeFor]=0),"O"&'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber],"P"&'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MakeFor]))
+<<<
+>>>	IsScoring
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],3,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],2,FALSE),0)))
+<<<
+>>>	IsHW66
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[HW66Lane]],90,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[HW66Lane]],89,FALSE),0)))
+<<<
+>>>	IsSuiteSpot
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],95,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],94,FALSE),0)))
+<<<
+>>>	IsTenpinTour
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],96,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],95,FALSE),0)))
+<<<
+>>>	IsBESXDualMode
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],97,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],96,FALSE),0)))
+<<<
+>>>	IsTenpinTourUPG
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],98,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],97,FALSE),0)))
+<<<
+>>>	IsBESXDualModeUPG
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],99,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],98,FALSE),0)))
+<<<
+>>>	IsCProUPG
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is UPG lic.]],51,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is UPG lic.]],50,FALSE),0)))
+<<<
+>>>	IsToBeCounted
+=SUM('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[IsScoring]:[IsBESXDualModeUPG]])
+<<<
+>>>	UniqueOrder
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,IF(MATCH('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[OrderNumber]:[OrderNumber]],0)<ROW('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@UniqueOrder])-2,0,1))
+<<<
+>>>	UniqueMainOrder
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,IF(MATCH('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],0)<ROW('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@UniqueMainOrder])-2,0,1))
+<<<
+>>>	ProductLine2
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],3,FALSE),IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],2,FALSE),0)))
+<<<
+>>>	MainProductLine
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsHW66]>0,"Highway 66",IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],45,FALSE),VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],44,FALSE))))
+<<<
+>>>	MainProductLine2
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsHW66]>0,"Highway 66",IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 3]],46,FALSE),VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 3]],45,FALSE))))
+<<<
+>>>	IsUPG
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],4,FALSE),VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],3,FALSE)))
+<<<
+>>>	IsOrdWUpg
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsUPG]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsUPG],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	IsAMFScTrdIn
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is trade-in]],93,FALSE),VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is trade-in]],92,FALSE)))
+<<<
+>>>	IsOrdWAMFScTrdIn
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsAMFScTrdIn]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsAMFScTrdIn],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	IsAMFConv
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber]="288601164-AMF",1,0))
+<<<
+>>>	IsOrdWAMFConv
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsAMFConv]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsAMFConv],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	IsBrunConv
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber]="288601164-BRUN",1,0))
+<<<
+>>>	IsOrdWBrunConv
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsBrunConv]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsBrunConv],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder]:'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	OrderY
+=YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderDate])
+<<<
+>>>	OrderM
+=MONTH('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderDate])
+<<<
+>>>	InvoicedY
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoiceDate]="","",YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoiceDate]))
+<<<
+>>>	InvoicedM
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoiceDate]="","",MONTH('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoiceDate]))
+<<<
+>>>	YearOfRef
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]="",IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderM]<=$DA$1,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]=$DB$1),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]+1),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY])
+<<<
+>>>	Test
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]="","",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY])
+<<<
+>>>	PrjType
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",
+     IF(IFERROR(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderType]="S0",NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811206,NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=15810892,NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811372),FALSE),"RENT",
+          IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsHW66]:[IsHW66]])>0,
+               IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,"HW66-BES X","HW66"),
+               IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsOrdWUpg]>0,
+                    IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsOrdWAMFScTrdIn]>0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsOrdWAMFConv]>0),"MOD AMF","UPG"),
+                    IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsOrdWBrunConv]>0,"MOD BRW",
+                         IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,
+                              IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS",
+                                   IF(MID('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderType],2,1)="3","MOD","NCP"),
+                                   "HW66-BES X"),
+                         IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsCProUPG]:[IsCProUPG]])>0,
+                              "CProUPG",
+                              IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS",
+                                     IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,"MOD","Other MOD"),"HW66"))))))))
+<<<
+>>>	PrjTypeBudget
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",
+    IF(IFERROR(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderType]="S0",NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811206,NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=15810892,NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811372),FALSE),"RENT",
+        IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsHW66]:[IsHW66]])>0,
+            IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,"HW66-BES X","HW66"),
+                IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsOrdWUpg]>0,
+                    IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsOrdWAMFScTrdIn]>0,"Q/AMF UPG","Q/AMF UPG"),
+                    IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsOrdWBrunConv]>0,"MOD BRW",
+                        IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,
+                            IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS",
+                                IF(MID('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderType],2,1)="3","MOD","NCP"),
+                                    "HW66-BES X"),
+                            IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsCProUPG]:[IsCProUPG]])>0,
+            "CProUPG",
+        IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS",
+              IF(SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,"MOD","Other MOD"),"HW66"))))))))
+<<<
+>>>	UniqueOrderCProUPG
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","",IF(AND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PrjType]="CProUPG",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@UniqueOrder]=1),SUMIF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[OrderNumber],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[IsCProUPG]),""))
+<<<
+>>>	Reg2
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SalesRegion],4)="BCO ","Bowlmor AMF",IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country]="US - United States",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SalesRegion],1)="0"),"US",IF(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2)="FR",TRIM('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SalesRegion])="",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SalesRegion],3)="EME",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SalesRegion],3)="AFR"),"EMEA",IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2)="AU","AUS - Australia",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SalesRegion])))))
+<<<
+>>>	MainPrLine
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF(NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ProductLine])=700,"HW66","STS"))
+<<<
+>>>	MainProductFamily
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsHW66]>0,"Highway 66",IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],45,FALSE),VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],44,FALSE))))
+<<<
+>>>	MacroReg
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country]="","AMER",VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],10,FALSE)))
+<<<
+>>>	SubReg
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country]="","US",
+    IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+        VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE),
+        VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE)))
+<<<
+>>>	USSubReg
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IFERROR(IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],3)="BCA","BAMF",IF(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MFO",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MUS"),"MIL",IF(IFERROR(SEARCH("MAIN EVENT",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ShipTo]),0)>0,"ME",IF(IFERROR(SEARCH("BOWL NEW ENGLAND",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo]),0)>0,"BNE",VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE))))),""))
+<<<
+>>>	USSubRegNoMIL
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",
+IFERROR(IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],3)="BCA","BAMF",
+IF(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MFO",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MUS"),
+IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@State],2)="AE","MIL-EU",
+IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@State],2)="AP","MIL-PAC",VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE))),
+IF(IFERROR(SEARCH("MAIN EVENT",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ShipTo]),0)>0,"ME",
+IF(IFERROR(SEARCH("BOWL NEW ENGLAND",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo]),0)>0,"BNE",
+VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE))))),""))
+<<<
+>>>	SubReg1
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@USSubRegNoMIL]="",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@USSubRegNoMIL],2)="NA"),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SubReg],"US-"&'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@USSubRegNoMIL]))
+<<<
+>>>	DistrPartner
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PrjType]="RENT","Direct",
+IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SubReg1],2)="US",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SubReg1],
+IF(LEFT(VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),5)="QAMF ",
+                IF(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="D10 - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DIS - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "),
+                         "Other distr.",
+                         IF(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - ",NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=16708128,AND(NOT(OR(LEFT(VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF Fr",LEFT(VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF UK",LEFT(VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF AU")),NOT(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "))),
+                                "Direct",
+                                IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                                       VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE),
+                                       VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)))),
+                 IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType]="",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BCI - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="TRD - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BOW - ",NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=16708128, LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - "),
+                         "Direct",
+                          IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                               VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE),
+                               VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE))))
+))
+<<<
+>>>	MajorDistPartner
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PrjType]="RENT","Direct",
+     IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SubReg1],2)="US",
+     'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SubReg1],
+     IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@DistrPartner],5)="QAMF ",
+                IF(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="D10 - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DIS - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "),
+                         "Other distr.",
+                         IF(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - ",NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=16708128,AND(NOT(OR(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF Fr",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF UK",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF AU")),NOT(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "))),
+                                "Direct",
+                                IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                                     VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE),
+                                     VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)))),
+                 IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType]="",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BCI - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="TRD - ",LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BOW - ",NUMBERVALUE('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderNumber])=16708128, LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - "),
+                         "Direct",
+                          IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                                VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE),
+                                VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE))))))
+<<<
+>>>	SubReg2
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MajorDistPartner]="Direct","Direct",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SubReg1]))
+<<<
+>>>	IsScPlusIsHW
+='STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScoring]+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsHW66]
+<<<
+>>>	YSH
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]>CurM,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]=""),
+"",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]))
+<<<
+>>>	YBL
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]="",
+     IF(OR(CurM>='STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderM],CurY>'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]),
+            CurY,
+            ""),
+
+IF(CurM>='STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderM],
+     IF(CurM<'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM],
+          'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY],
+          IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]<'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-1,"")
+     ),
+     IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]<'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-1,
+          IF(CurM<'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-1),
+          IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]='STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-1,
+                IF(CurM<'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM],
+                       'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY],
+                       ""),
+                "")
+     )
+)))
+<<<
+>>>	YBL1
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]="","",
+IF(OR(AND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]='STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]-1,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderM]<=CurM),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]<'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]-1),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]-1,"")))
+<<<
+>>>	YBL2
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]="","",
+IF(OR(AND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]='STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]-2,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderM]<=CurM),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]<'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]-2),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]-2,"")))
+<<<
+>>>	ORDER
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,"",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	SH
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]="","",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	BL
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]=""),"",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	BL1
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL1]=""),"",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	BL2
+=IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL2]=""),"",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	TotBL
+=IFERROR(SUM('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[BL]:[BL2]])/COUNT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[BL]:[BL2]]),"")
+<<<
+>>>	SH-BL
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SH]="",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]="",0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]),IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SH],'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]))
+<<<
+>>>	BL-CY
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]="","",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate]="",
+    IF($DC$1="Y", 'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL],
+    ""),
+    IF(YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])>$DB$1, "",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL])))
+<<<
+>>>	BL-NY
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL]="","",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[BL-CY]]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@TotBL],""))
+<<<
+>>>	YBL-BDG
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]="","",
+    IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate]="",
+         IF($DC$1="Y",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL],""),
+         IF(YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])<$DB$1,$DB$1,YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate]))))
+<<<
+>>>	Y-Promised
+=YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])
+<<<
+>>>	BudgetClm
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]="",
+    IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL]="","",
+    IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate]="",
+         IF($DC$1="Y",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL],""),
+         IF(OR(YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])='STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YBL],YEAR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@PromisedDate])<$DB$1),"BL-CY","BL-NY"))),
+     "SH")
+<<<
+>>>	MacroArea4
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country]="",
+    "North America",
+    IF(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+         VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],12,FALSE),
+         VLOOKUP(LEFT('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],12,FALSE)))
+<<<
+>>>	OrderDateCheck
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","N",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderY]<$DB$1,"Y",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@OrderM]<=$DA$1,"Y","N")))
+<<<
+>>>	ShippedMonthCheck
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","N",IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]>$DA$1),"N","Y"))
+<<<
+>>>	ShippedDateCheck
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","N",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1,"Y",IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]<=$DA$1,"Y","N")))
+<<<
+>>>	QtyIncl
+=SUM('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])
+<<<
+>>>	RevUSD
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF(AND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[YBL-BDG]]=""),"",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="USD",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount],
+IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[InvoicedM]>$DA$1),
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,8+$DA$1),2),
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,8+$DA$1),2),
+ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,8+$DA$1),2))),
+
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1,5,5+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1,5,5+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1,5,5+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1))),2)))))
+))
+<<<
+>>>	LookupListPrice
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","0",
+IFERROR(1*IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ProductLine]="700",
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR",
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!HW66ListPr[[PartNum]:[USD Price]],4,FALSE),0),
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!HW66ListPr[[PartNum]:[USD Price]],5,FALSE),0)),
+
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR",
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!STSListPr[[PartNum]:[USD Price]],4,FALSE),0),
+IFERROR(VLOOKUP('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!STSListPr[[PartNum]:[USD Price]],5,FALSE),0))),'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD]))
+<<<
+>>>	LineTotalListPrice
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","0",
+IF(AND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[YBL-BDG]]=""),"",
+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ListPrice]=0, 'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LookupListPrice], 'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@ListPrice])
+*(IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD]<0,-1,1))))
+<<<
+>>>	ListUSD
+=IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF(AND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@YSH]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@[YBL-BDG]]=""),"",
+(IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]=0,'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD],
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="USD",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice],
+IF(OR('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]="",'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[InvoicedM]>$DA$1),
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,8+$DA$1),2),
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,8+$DA$1),2),
+ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,8+$DA$1),2))),
+
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1,5,5+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1,5,5+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+ROUND('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedY]<$DB$1,5,5+'STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@InvoicedM]-1))),2))))
+))) *
+(IF('STS and HWY66 Budget Dashboard (June 8th, 2016) - Empty.xlsx'!JDEDataTable[@RevUSD]<0,-1,1))))
+<<<

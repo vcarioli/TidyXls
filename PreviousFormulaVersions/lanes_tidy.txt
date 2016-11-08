@@ -1,0 +1,1156 @@
+----------------------------------------------------------------------------------------------------
+----- SoldTo
+----------------------------------------------------------------------------------------------------
+3574184-QUBICAAMFB.V.-NCP/MOD
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ShipTo
+----------------------------------------------------------------------------------------------------
+3574184-QUBICAAMFB.V.-NCP/MOD
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MakeFor
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- CustomerType
+----------------------------------------------------------------------------------------------------
+AFF-Affiliate
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Country
+----------------------------------------------------------------------------------------------------
+NL-Netherlands
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- State
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Region
+----------------------------------------------------------------------------------------------------
+EME-Europe
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SalesRep
+----------------------------------------------------------------------------------------------------
+284476-Salesperson-Unspecified
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BranchPlant
+----------------------------------------------------------------------------------------------------
+7110
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderType
+----------------------------------------------------------------------------------------------------
+S3
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderNumber
+----------------------------------------------------------------------------------------------------
+663976
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- LineNumber
+----------------------------------------------------------------------------------------------------
+1.014
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderDate
+----------------------------------------------------------------------------------------------------
+40423
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- RequestedDate
+----------------------------------------------------------------------------------------------------
+40449
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ItemNumber
+----------------------------------------------------------------------------------------------------
+Q941760BL
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- LineType
+----------------------------------------------------------------------------------------------------
+ZS
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Description
+----------------------------------------------------------------------------------------------------
+HWY66BlackLanePackage
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- DocumentNumber
+----------------------------------------------------------------------------------------------------
+1691839
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- InvoiceDate
+----------------------------------------------------------------------------------------------------
+40492
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ItemPriceGroups
+----------------------------------------------------------------------------------------------------
+PEDTHUND
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ProductLine
+----------------------------------------------------------------------------------------------------
+700
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Product
+----------------------------------------------------------------------------------------------------
+199
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Sub-Product
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ListPrice
+----------------------------------------------------------------------------------------------------
+0
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- PricePerUnit
+----------------------------------------------------------------------------------------------------
+0
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Currency
+----------------------------------------------------------------------------------------------------
+USD
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ActualShipDate
+----------------------------------------------------------------------------------------------------
+40492
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- QtyOrderTransact
+----------------------------------------------------------------------------------------------------
+1
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ExtendedAmount
+----------------------------------------------------------------------------------------------------
+0
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- PartNumOK
+----------------------------------------------------------------------------------------------------
+IF(
+	IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Part '#]],1,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Description]],1,FALSE)
+			,"N/A"
+		)
+	)="N/A"
+	,"N/A"
+	,"OK"
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MainOrder
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]="15730391"
+		,AND(
+			LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],9)="DIV - AMF"
+			,NOT(
+				OR(
+					LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],6)="219246"
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],6)="249946"
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],6)="316977"
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],7)="3925218"
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],7)="4264819"
+				)
+			)
+		)
+	)
+	,"Exclude"
+	,IF(
+		OR(
+			'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MakeFor]=""
+			,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MakeFor]="0"
+		)
+		,"O"&'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]
+		,"P"&'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MakeFor]
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsScoring
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],3,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],2,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsHW66
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[IsAMU]],100,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[IsAMU]],99,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"
+		,"_"
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],4,FALSE)
+			,VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],3,FALSE)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsOrdWUpg
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScoring]=0
+	,0
+	,SUMIFS('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[IsUPG],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[MainOrder],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsAMFScTrdIn
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"_"
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is AMF trade-in]],93,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is AMF trade-in]],92,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsOrdWAMFScTrdIn
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScoring]=0
+		,0
+		,SUMIFS('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[IsAMFScTrdIn],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[MainOrder],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder])
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsCProUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is UPG lic.]],51,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is UPG lic.]],50,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsSuiteSpot
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],95,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],94,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsTenpinTour
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],96,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],95,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsBESXDualMode
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],97,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],96,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsTenpinTourUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],98,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],97,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsBESXDualModeUPG
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IFERROR(
+		VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],99,FALSE)
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],98,FALSE)
+			,0
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MainPrLine
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"_"
+	,IF(
+		NUMBERVALUE('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ProductLine])=700
+		,"AMU"
+		,"STS"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MainProductFamily
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"
+	)
+	,"_"
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsHW66]>0
+		,"Highway 66"
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],45,FALSE)
+			,VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],44,FALSE)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ProductFamily
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PartNumOK]="N/A"
+	)
+	,"_"
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsHW66]>0
+		,"Highway 66"
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],44,FALSE)
+			,VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],43,FALSE)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- UniqueOrder
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		MATCH('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],0)<ROW('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder])-2
+		,0
+		,1
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderY
+----------------------------------------------------------------------------------------------------
+YEAR('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderDate])
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderM
+----------------------------------------------------------------------------------------------------
+MONTH('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderDate])
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- InvoicedY
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate]=""
+	,""
+	,YEAR('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- InvoicedM
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate]=""
+	,""
+	,MONTH('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoiceDate])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YearOfRef
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+	,IF(
+		OR(
+			'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=$BO$1
+			,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]=CurY
+		)
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]+1
+	)
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Test
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+	,""
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- PrjType
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,"_"
+	,IF(
+		IFERROR(
+			OR(
+				'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderType]="S0"
+				,NUMBERVALUE('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811206
+				,NUMBERVALUE('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber])=15810892
+				,NUMBERVALUE('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber])=15811372
+			)
+			,FALSE
+		)
+		,"RENT"
+		,IF(
+			SUMIF('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsHW66]:[IsHW66]])>0
+			,IF(
+				SUMIF('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0
+				,"HW66-BES X"
+				,"HW66"
+			)
+			,IF(
+				'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsOrdWUpg]>0
+				,IF(
+					'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsOrdWAMFScTrdIn]>0
+					,"MOD AMF"
+					,"UPG"
+				)
+				,IF(
+					SUMIF('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0
+					,IF(
+						'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS"
+						,IF(
+							MID('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderType],2,1)="3"
+							,"MOD"
+							,"NCP"
+						)
+						,"HW66-BES X"
+					)
+					,IF(
+						SUMIF('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder],'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[IsCProUPG]:[IsCProUPG]])>0
+						,"CProUPG"
+						,IF(
+							'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainPrLine]="STS"
+							,"MOD"
+							,"HW66"
+						)
+					)
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- Reg2
+----------------------------------------------------------------------------------------------------
+IF(
+	LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Region],4)="BCO "
+	,"Bowlmor AMF"
+	,IF(
+		OR(
+			'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]=""
+			,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]="US - United States"
+			,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Region],1)="0"
+		)
+		,"US"
+		,IF(
+			OR(
+				LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2)="FR"
+				,TRIM('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Region])=""
+				,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Region],3)="EME"
+				,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Region],3)="AFR"
+			)
+			,"EMEA"
+			,IF(
+				LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2)="AU"
+				,"AUS - Australia"
+				,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Region]
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MacroReg
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]=""
+	,"AMER"
+	,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],10,FALSE)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SubReg
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country]=""
+	,"US"
+	,IF(
+		LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+		,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE)
+		,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- USSubRegNoMIL
+----------------------------------------------------------------------------------------------------
+IFERROR(
+	IF(
+		LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="BCA"
+		,"BAMF"
+		,IF(
+			OR(
+				LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MFO"
+				,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MUS"
+			)
+			,IF(
+				LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AE"
+				,"MIL-EU"
+				,IF(
+					LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AP"
+					,"MIL-PAC"
+					,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE)
+				)
+			)
+			,IF(
+				IFERROR(
+					SEARCH("MAIN EVENT",'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ShipTo])
+					,0
+				)>0
+				,"ME"
+				,IF(
+					IFERROR(
+						SEARCH("BOWL NEW ENGLAND",'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo])
+						,0
+					)>0
+					,"BNE"
+					,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE)
+				)
+			)
+		)
+	)
+	,""
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- USSubReg
+----------------------------------------------------------------------------------------------------
+IFERROR(
+	IF(
+		LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="BCA"
+		,"BAMF"
+		,IF(
+			OR(
+				LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MFO"
+				,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],3)="MUS"
+			)
+			,IF(
+				LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AE"
+				,"MIL-EU"
+				,IF(
+					LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2)="AP"
+					,"MIL-PAC"
+					,"MIL"
+				)
+			)
+			,IF(
+				IFERROR(
+					SEARCH("MAIN EVENT",'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ShipTo])
+					,0
+				)>0
+				,"ME"
+				,IF(
+					IFERROR(
+						SEARCH("BOWL NEW ENGLAND",'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo])
+						,0
+					)>0
+					,"BNE"
+					,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE)
+				)
+			)
+		)
+	)
+	,""
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SubReg1
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@USSubReg]=""
+		,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@USSubReg],2)="NA"
+	)
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg]
+	,"US-"&'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@USSubReg]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- DistrPartner
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="RENT"
+	,"Direct"
+	,IF(
+		LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1],2)="US"
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1]
+		,IF(
+			LEFT(VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),5)="QAMF "
+			,IF(
+				OR(
+					LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="D10 - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DIS - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "
+				)
+				,"Other distr."
+				,IF(
+					AND(
+						NOT(
+							OR(
+								LEFT(VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF Fr"
+								,LEFT(VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF UK"
+							)
+						)
+						,NOT(
+							LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "
+						)
+					)
+					,"Direct"
+					,IF(
+						LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+						,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+						,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+					)
+				)
+			)
+			,IF(
+				OR(
+					'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType]=""
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BCI - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="TRD - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BOW - "
+				)
+				,"Direct"
+				,IF(
+					LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+					,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+					,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- MajorDistPartner
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="RENT"
+	,"Direct"
+	,IF(
+		LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1],2)="US"
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1]
+		,IF(
+			LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@DistrPartner],5)="QAMF "
+			,IF(
+				OR(
+					LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="D10 - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DIS - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "
+				)
+				,"Other distr."
+				,IF(
+					AND(
+						NOT(
+							OR(
+								LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF Fr"
+								,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF UK"
+							)
+						)
+						,NOT(
+							LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "
+						)
+					)
+					,"Direct"
+					,IF(
+						LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+						,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+						,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+					)
+				)
+			)
+			,IF(
+				OR(
+					'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType]=""
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BCI - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="TRD - "
+					,LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@CustomerType],6)="BOW - "
+				)
+				,"Direct"
+				,IF(
+					LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - "
+					,VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+					,VLOOKUP(LEFT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SubReg2
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MajorDistPartner]="Direct"
+	,"Direct"
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@SubReg1]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsScPlusIsHW
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScoring]+'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsHW66]+SUM('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YSH
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		AND(
+			'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="CProUPG"
+			,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@UniqueOrder]=0
+		)
+		,AND(
+			NOT(
+				'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@PrjType]="CProUPG"
+			)
+			,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+SUM('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+		)
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]>CurM
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+	)
+	,""
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YBL
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsCProUPG]+SUM('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+	,""
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]=""
+		,IF(
+			OR(
+				CurM>='Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]
+				,CurY>'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]
+			)
+			,CurY
+			,""
+		)
+		,IF(
+			CurM>='Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]
+			,IF(
+				CurM<'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]
+				,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+				,IF(
+					'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+					,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+					,""
+				)
+			)
+			,IF(
+				'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+				,IF(
+					CurM<'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]
+					,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+					,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+				)
+				,IF(
+					'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]='Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]-1
+					,IF(
+						CurM<'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]
+						,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]
+						,""
+					)
+					,""
+				)
+			)
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YBL1
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsCProUPG]+SUM('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]=""
+	)
+	,""
+	,IF(
+		OR(
+			AND(
+				'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]='Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-1
+				,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=CurM
+			)
+			,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-1
+		)
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-1
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- YBL2
+----------------------------------------------------------------------------------------------------
+IF(
+	OR(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]+'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsCProUPG]+SUM('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsSuiteSpot]:[IsBESXDualModeUPG]])=0
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]=""
+	)
+	,""
+	,IF(
+		OR(
+			AND(
+				'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]='Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-2
+				,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=CurM
+			)
+			,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-2
+		)
+		,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]-2
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ORDER
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]=0
+	,""
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- SH
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YSH]=""
+	,""
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL]=""
+	,""
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL1
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL1]=""
+	,""
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- BL2
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@YBL2]=""
+	,""
+	,'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@QtyOrderTransact]*'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@IsScPlusIsHW]
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderDateCheck
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderY]<$BP$1
+	,"Y"
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderM]<=$BO$1
+		,"Y"
+		,"N"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- ShippedDateCheck
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedY]<$BP$1
+	,"Y"
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@InvoicedM]<=$BO$1
+		,"Y"
+		,"N"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- QtyIncl
+----------------------------------------------------------------------------------------------------
+IF(
+	COUNT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])=0
+	,""
+	,SUM('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])/COUNT('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[SH]:[BL2]])
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- IsHWY66 Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,0
+	,IF(
+		IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[#Data],2,FALSE)
+			,"N"
+		)="N"
+		,"N"
+		,"Y"
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderNum-HWY66Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[IsHWY66 Theme]]="N"
+		,""
+		,IFERROR(
+			'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]&"-"&VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[#Data],3,FALSE)
+			,"No Theme"
+		)
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- OrderHWY66 Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ProductFamily]="Highway 66"
+		,IFERROR(
+			VLOOKUP('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@OrderNumber]&"-*",'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[[OrderNum-HWY66Theme]:[OrderNum-HWY66Theme]],1,FALSE)
+			,""
+		)
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+----- HWY66Theme
+----------------------------------------------------------------------------------------------------
+IF(
+	'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@MainOrder]="Exclude"
+	,""
+	,IF(
+		'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@ProductFamily]="Highway 66"
+		,IF(
+			'Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]]=""
+			,"No theme"
+			,IF(
+				MID('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]],LEN('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]])-1,1)="-"
+				,VLOOKUP(MID('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]],LEN('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]]),1),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[[ID]:[ID2]],2,FALSE)
+				,VLOOKUP(MID('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]],LEN('Scoring Lanes Sales Global (March 9, 2016) - v4b - STS and Highway 66 - Empty.xlsx'!JDEDataTable[@[OrderHWY66 Theme]])-1,2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!Thm[[ID]:[ID2]],2,FALSE)
+			)
+		)
+		,""
+	)
+)
+----------------------------------------------------------------------------------------------------
+

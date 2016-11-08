@@ -1,0 +1,474 @@
+>>>	SoldTo
+218857 - MERIDYEN SPOR DIS TIC.VE PAZ. LTD. STI
+<<<
+>>>	ShipTo
+218857 - MERIDYEN SPOR DIS TIC.VE PAZ. LTD. STI
+<<<
+>>>	Country
+TR - Turkey
+<<<
+>>>	State
+
+<<<
+>>>	CustomerType
+DIS - Distributor - International
+<<<
+>>>	SalesArea
+MIE - Middle East
+<<<
+>>>	SalesRegion
+
+<<<
+>>>	SalesGrouping
+
+<<<
+>>>	Chain
+
+<<<
+>>>	SalesRep
+284476 - Salesperson - Unspecified
+<<<
+>>>	MakeFor
+
+<<<
+>>>	BranchPlant
+7120
+<<<
+>>>	OrderType
+S3
+<<<
+>>>	OrderNumber
+15714056
+<<<
+>>>	LineNumber
+2
+<<<
+>>>	OrderDate
+42208
+<<<
+>>>	PromisedDate
+42278
+<<<
+>>>	ItemNumber
+612060202
+<<<
+>>>	LineType
+WM
+<<<
+>>>	Description
+HWY66 2 Lanes Auto Bumper
+<<<
+>>>	DocumentNumber
+1982296
+<<<
+>>>	InvoiceDate
+42236
+<<<
+>>>	ItemPriceGroups
+PEDTHUND
+<<<
+>>>	ProductLine
+700
+<<<
+>>>	Product
+401
+<<<
+>>>	Sub-Product
+
+<<<
+>>>	ListPrice
+1650
+<<<
+>>>	PricePerUnit
+39000
+<<<
+>>>	Currency
+USD
+<<<
+>>>	ActualShipDate
+
+<<<
+>>>	QtyOrderTransact
+1
+<<<
+>>>	ExtendedAmount
+39000
+<<<
+>>>	PartNumOK
+=IF(IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Part '#]],1,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Description]],1,FALSE),"N/A"))="N/A","N/A","OK")
+<<<
+>>>	MainOrder
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber]="15730391",AND(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],10)="DIV - QAMF",NOT(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],6)="219246",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],6)="249946",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],6)="316977",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],7)="3925218",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],7)="4264819",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],5)="8400 ")))),"Exclude",
+IF(OR(NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16204094,NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16204138),"P16204094-16204138 - SUITE SPOT",
+IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MakeFor]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MakeFor]="0",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MakeFor]=0),"O"&'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber],"P"&'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MakeFor])))
+<<<
+>>>	IsScoring
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],3,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],2,FALSE),0)))
+<<<
+>>>	IsHW66
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IF(IFERROR(AND(NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16204094,NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber])=612060028),0),2,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[IsAMU]],100,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[IsAMU]],99,FALSE),0))))
+<<<
+>>>	IsSuiteSpot
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IF(IFERROR(AND(NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16204094,NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber])=612060028),0),2,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],95,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],94,FALSE),0))))
+<<<
+>>>	IsTenpinTour
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],96,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],95,FALSE),0)))
+<<<
+>>>	IsBESXDualMode
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],97,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],96,FALSE),0)))
+<<<
+>>>	IsTenpinTourUPG
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],98,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],97,FALSE),0)))
+<<<
+>>>	IsBESXDualModeUPG
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[BESXDMUPG]],99,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[BESXDMUPG]],98,FALSE),0)))
+<<<
+>>>	IsCProUPG
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is UPG lic.]],51,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is UPG lic.]],50,FALSE),0)))
+<<<
+>>>	IsToBeCounted
+=SUM('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[IsScoring]:[IsBESXDualModeUPG]])
+<<<
+>>>	UniqueOrder
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,IF(MATCH('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],0)<ROW('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder])-1,0,1))
+<<<
+>>>	UniqueMainOrder
+='STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@UniqueOrder]
+<<<
+>>>	ProductLine2
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],44,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],43,FALSE),"")))
+<<<
+>>>	MainProductLine
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber]="15730391",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],9)="DIV - AMF",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsSuiteSpot]>0,"Suite Spot",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsHW66]>0,"Highway 66",IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],45,FALSE),VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],44,FALSE)))))
+<<<
+>>>	MainProductLine2
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber]="15730391",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],9)="DIV - AMF",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsSuiteSpot]>0,"Suite Spot",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsHW66]>0,"Highway 66",IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 3]],46,FALSE),VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 3]],45,FALSE)))))
+<<<
+>>>	IsUPG
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Sc. Upg Lane]],4,FALSE),VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Sc. Upg Lane]],3,FALSE)))
+<<<
+>>>	IsOrdWUpg
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsUPG]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsUPG],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	IsAMFScTrdIn
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PartNumOK]="N/A"),"_",
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Is trade-in]],93,FALSE),VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Is trade-in]],92,FALSE)))
+<<<
+>>>	IsOrdWAMFScTrdIn
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsAMFScTrdIn]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsAMFScTrdIn],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	IsAMFConv
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber]="288601164-AMF",1,0))
+<<<
+>>>	IsOrdWAMFConv
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsAMFConv]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsAMFConv],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	IsBrunConv
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber]="288601164-BRUN",1,0))
+<<<
+>>>	IsOrdWBrunConv
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,
+SUMIFS('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsBrunConv]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsBrunConv],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]))
+<<<
+>>>	OrderY
+=YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderDate])
+<<<
+>>>	OrderM
+=MONTH('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderDate])
+<<<
+>>>	InvoicedY
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoiceDate]="","",YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoiceDate]))
+<<<
+>>>	InvoicedM
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoiceDate]="","",MONTH('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoiceDate]))
+<<<
+>>>	YearOfRef
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]="",IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderM]<=$DH$1,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]=$DI$1),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]+1),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY])
+<<<
+>>>	Test
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]="","",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY])
+<<<
+>>>	PrjType
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",
+     IF(IFERROR(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderType]="S0",NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=15811206,NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=15810892,NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=15811372),FALSE),"RENT",
+          IF(SUMIF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[IsHW66]:[IsHW66]])>0,
+               IF(SUMIF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,"HW66-BES X","AMU"),
+               IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsOrdWUpg]>0,
+                    IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsOrdWAMFScTrdIn]>0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsOrdWAMFConv]>0),"MOD AMF","UPG"),
+                    IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsOrdWBrunConv]>0,"MOD BRW",
+                         IF(SUMIF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,
+                              IF(MID('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderType],2,1)="3","MOD","NCP"),
+                         IF(SUMIF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[IsCProUPG]:[IsCProUPG]])>0,
+                              "CProUPG",
+                              IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainPrLine]="STS",
+                                     IF(SUMIF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[MainOrder]:[MainOrder]],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[[IsScoring]:[IsScoring]])>0,"MOD","Other MOD"),"AMU"))))))))
+<<<
+>>>	PrjTypeBudget
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PrjType]="MOD AMF",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PrjType]="UPG"),"Q/AMF UPG",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PrjType])
+<<<
+>>>	UniqueOrderCProUPG
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",IF(AND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PrjType]="CProUPG",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@UniqueOrder]=1),SUMIF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[IsCProUPG]),""))
+<<<
+>>>	Reg2
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SalesRegion],4)="BCO ","Bowlmor AMF",IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country]="US - United States",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SalesRegion],1)="0"),"US",IF(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2)="FR",TRIM('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SalesRegion])="",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SalesRegion],3)="EME",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SalesRegion],3)="AFR"),"EMEA",IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2)="AU","AUS - Australia",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SalesRegion])))))
+<<<
+>>>	MainPrLine
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF(NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ProductLine])=700,"AMU","STS"))
+<<<
+>>>	MainProductFamily
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PartNumOK]="N/A","_",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsSuiteSpot]>0,"Suite Spot",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsHW66]>0,"Highway 66",IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Part '#]:[Score family 2]],45,FALSE),VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Description],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!PartNumFiltersTable[[Description]:[Score family 2]],44,FALSE)))))
+<<<
+>>>	MainProductFamily2
+=IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainProductFamily],5)="BES X","BES X",IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainProductFamily]="QScore",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainProductFamily]="BES",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainProductFamily]="Bowland"),"QScore/Oth.",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainProductFamily]))
+<<<
+>>>	MacroReg
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country]="","AMER",VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],10,FALSE)))
+<<<
+>>>	SubReg
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country]="","US",
+    IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+        VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE),
+        VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],11,FALSE)))
+<<<
+>>>	USSubReg
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IFERROR(IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],3)="BCA","BAMF",IF(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],3)="MFO",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],3)="MUS"),"MIL",IF(IFERROR(SEARCH("MAIN EVENT",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ShipTo]),0)>0,"ME",IF(IFERROR(SEARCH("BOWL NEW ENGLAND",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo]),0)>0,"BNE",VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE))))),""))
+<<<
+>>>	USSubRegNoMIL
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",
+IFERROR(IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],3)="BCA","BAMF",
+IF(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],3)="MFO",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],3)="MUS"),
+IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@State],2)="AE","MIL-EU",
+IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@State],2)="AP","MIL-PAC",VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE))),
+IF(IFERROR(SEARCH("MAIN EVENT",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ShipTo]),0)>0,"ME",
+IF(IFERROR(SEARCH("BOWL NEW ENGLAND",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo]),0)>0,"BNE",
+VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@State],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!USRegionsTb[[ST1]:[DSM 3]],2,FALSE))))),""))
+<<<
+>>>	SubReg1
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@USSubRegNoMIL]="",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@USSubRegNoMIL],2)="NA"),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SubReg],"US-"&'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@USSubRegNoMIL]))
+<<<
+>>>	DistrPartner
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PrjType]="RENT","Direct",
+IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SubReg1],2)="US",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SubReg1],
+IF(LEFT(VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),5)="QAMF ",
+                IF(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="D10 - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="DIS - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "),
+                         "Other distr.",
+                         IF(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - ",NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16708128,AND(NOT(OR(LEFT(VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF Fr",LEFT(VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF UK",LEFT(VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],14,FALSE),7)="QAMF AU")),NOT(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "))),
+                                "Direct",
+                                IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                                       VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE),
+                                       VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE)))),
+                 IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType]="",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="BCI - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="TRD - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="BOW - ",NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16708128, LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - "),
+                         "Direct",
+                          IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                               VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE),
+                               VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],14,FALSE))))
+))
+<<<
+>>>	MajorDistPartner
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PrjType]="RENT","Direct",
+     IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SubReg1],2)="US",
+     'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SubReg1],
+     IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@DistrPartner],5)="QAMF ",
+                IF(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="D10 - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="DIS - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="DSR - "),
+                         "Other distr.",
+                         IF(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - ",NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16708128,AND(NOT(OR(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF Fr",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF UK",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@DistrPartner],7)="QAMF AU")),NOT(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="AFF - "))),
+                                "Direct",
+                                IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                                     VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE),
+                                     VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE)))),
+                 IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType]="",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="BCI - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="TRD - ",LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@CustomerType],6)="BOW - ",NUMBERVALUE('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderNumber])=16708128, LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder],11)="P6021914 - "),
+                         "Direct",
+                          IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+                                VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE),
+                                VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner-Budget]],15,FALSE))))))
+<<<
+>>>	SubReg2
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","_",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MajorDistPartner]="Direct","Direct",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SubReg1]))
+<<<
+>>>	IsScPlusIsHW
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScoring]+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsHW66]+SUM('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[IsTenpinTour]:[IsBESXDualModeUPG]]))
+<<<
+>>>	YSH
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]>CurM,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]=""),
+"",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]))
+<<<
+>>>	YBL
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]="",
+     IF(OR(CurM>='STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderM],CurY>'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]),
+            CurY,
+            ""),
+
+IF(CurM>='STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderM],
+     IF(CurM<'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM],
+          'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY],
+          IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]<'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-1,"")
+     ),
+     IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]<'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-1,
+          IF(CurM<'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-1),
+          IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]='STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-1,
+                IF(CurM<'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM],
+                       'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY],
+                       ""),
+                "")
+     )
+)))
+<<<
+>>>	YBL1
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]="","",
+IF(OR(AND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]='STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]-1,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderM]<=CurM),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]<'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]-1),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]-1,"")))
+<<<
+>>>	YBL2
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]="","",
+IF(OR(AND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]='STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]-2,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderM]<=CurM),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]<'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]-2),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]-2,"")))
+<<<
+>>>	ORDER
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,"",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	SH
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YSH]="","",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	BL
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]=""),"",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	BL1
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL1]=""),"",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	BL2
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW]=0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL2]=""),"",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@QtyOrderTransact]*'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@IsScPlusIsHW])
+<<<
+>>>	TotBL
+=IFERROR(SUM('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[BL]:[BL2]])/COUNT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[BL]:[BL2]]),"")
+<<<
+>>>	SH-BL
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SH]="",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL]="",0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL]),IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SH],'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL]))
+<<<
+>>>	BL-CY
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL]="","",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate]="",
+    IF($DJ$1="Y", 'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL],
+    ""),
+    IF(YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate])>$DI$1, "",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL])))
+<<<
+>>>	BL-NY
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL]="","",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[BL-CY]]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@TotBL],""))
+<<<
+>>>	YBL-BDG
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]="","",
+    IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate]="",
+         IF($DJ$1="Y",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL],""),
+         IF(YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate])<$DI$1,$DI$1,YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate]))))
+<<<
+>>>	Y-Promised
+=YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate])
+<<<
+>>>	BudgetClm
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YSH]="",
+    IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL]="","",
+    IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate]="",
+         IF($DJ$1="Y",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL],""),
+         IF(OR(YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate])='STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YBL],YEAR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@PromisedDate])<$DI$1),"BL-CY","BL-NY"))),
+     "SH")
+<<<
+>>>	MacroArea4
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country]="",
+    "North America",
+    IF(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@SoldTo],10)="6002509 - ",
+         VLOOKUP("RO",'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],12,FALSE),
+         VLOOKUP(LEFT('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Country],2),'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/STS business analysis/Geographical filters.xlsx'!Countries[[ISOCode2]:[Distr. Partner]],12,FALSE)))
+<<<
+>>>	OrderDateCheck
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","N",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderY]<$DI$1,"Y",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@OrderM]<=$DH$1,"Y","N")))
+<<<
+>>>	ShippedMonthCheck
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","N",IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]>$DH$1),"N","Y"))
+<<<
+>>>	ShippedDateCheck
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","N",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]<$DI$1,"Y",IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]<=$DH$1,"Y","N")))
+<<<
+>>>	QtyIncl
+=SUM('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[SH]:[BL2]])
+<<<
+>>>	RevUSD
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF(AND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YSH]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[YBL-BDG]]=""),"",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="USD",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ExtendedAmount],
+IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[InvoicedM]>$DH$1),
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,8+$DH$1),2),
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,8+$DH$1),2),
+ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,8+$DH$1),2))),
+
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]<$DI$1,5,5+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]<$DI$1,5,5+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ExtendedAmount]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]<$DI$1,5,5+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]-1))),2)))))
+))
+<<<
+>>>	LookupListPrice
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","0",
+IFERROR(1*IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ProductLine]="700",
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="EUR",
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!HW66ListPr[[PartNum]:[USD Price]],4,FALSE),0),
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!HW66ListPr[[PartNum]:[USD Price]],5,FALSE),0)),
+
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="EUR",
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!STSListPr[[PartNum]:[USD Price]],4,FALSE),0),
+IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ItemNumber],'https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Part num filters - for STS business analysis.xlsx'!STSListPr[[PartNum]:[USD Price]],5,FALSE),0))),'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@RevUSD]))
+<<<
+>>>	LineTotalListPrice
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","0",
+IF(AND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YSH]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[YBL-BDG]]=""),"",
+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@QtyOrderTransact]*
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ListPrice]=0, 'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LookupListPrice], 'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@ListPrice])
+*(IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@RevUSD]<0,-1,1))))
+<<<
+>>>	ListUSD
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude","",
+IF(AND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@YSH]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[YBL-BDG]]=""),"",
+(IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice]=0,'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@RevUSD],
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="USD",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice],
+IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]="",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[InvoicedM]>$DH$1),
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,8+$DH$1),2),
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,8+$DH$1),2),
+ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,8+$DH$1),2))),
+
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="EUR",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],3,('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]<$DI$1,5,5+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@Currency]="GBP",ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],2,('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]<$DI$1,5,5+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]-1))),2),
+ROUND('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@LineTotalListPrice]*INDEX('https://qubicaamf.sharepoint.com/sites/prodmgmt/STS Documents/Price lists/Budgeted exchange rates.xlsx'!ExchRates[#Data],1,('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]-2011+IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedY]<$DI$1,5,5+'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@InvoicedM]-1))),2))))
+))) *
+(IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@RevUSD]<0,-1,1))))
+<<<
+>>>	MainO-PF2
+=IF(OR('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]="Exclude",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainProductFamily2]="_"),"",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]&"---"&'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainProductFamily2])
+<<<
+>>>	UniqueMainO-PF2-Int
+=IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]&"---BES X",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2],1,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]&"---QScore/Oth.",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2],1,FALSE),""))
+<<<
+>>>	UniqueMainO-PF2-Int-AMU
+=IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]&"---Highway 66",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2],1,FALSE),IFERROR(VLOOKUP('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@MainOrder]&"---Suite Spot",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2]:'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[MainO-PF2],1,FALSE),""))
+<<<
+>>>	UMO-PF
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int]]="","",MID('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int]],SEARCH("---",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int]])+3,LEN('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int]])-SEARCH("---",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int]])+2))
+<<<
+>>>	UMO-PF-AMU
+=IF('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int-AMU]]="","",MID('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int-AMU]],SEARCH("---",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int-AMU]])+3,LEN('STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int-AMU]])-SEARCH("---",'STS and AMU Budget Dashboard (August 1st, 2016) - Empty - 0808.xlsx'!JDEDataTable[@[UniqueMainO-PF2-Int-AMU]])+2))
+<<<
